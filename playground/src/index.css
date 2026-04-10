@@ -7,6 +7,20 @@
 
 @import "../../dist/cleacss.untranspiled.css";
 
+/* Unlayered overrides — beat cleacss @layer elements rules. */
+.input--compact {
+  width: max-content;
+}
+
+.input--compact input[type="number"],
+.input--compact input[type="text"] {
+  width: 6rem;
+}
+
+.input--compact input[type="range"] {
+  width: 10rem;
+}
+
 @layer demo {
 
   .logo {
@@ -65,6 +79,230 @@
   .swatch-label {
     font-family: var(--font-family-mono);
     font-size: var(--font-size-8);
+  }
+
+  /* ───── Figma configurator ───── */
+
+  .figma-mono {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-8);
+    color: var(--color-neutral-700);
+  }
+
+  .figma-tabs a {
+    font-weight: var(--font-weight-bold);
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      text-decoration-thickness: 0.125em;
+      text-underline-offset: 0.25em;
+    }
+  }
+
+  .figma-hex {
+    color: var(--color-neutral-600);
+    display: block;
+  }
+
+  .figma-hex--dark {
+    color: var(--color-neutral-500);
+  }
+
+  figma-accent-editor {
+    width: 100%;
+  }
+
+  .token-row {
+    background: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-s);
+    width: 100%;
+  }
+
+  .token-row__head {
+    align-items: center;
+    color: var(--color-neutral-800);
+    display: flex;
+    font-size: var(--font-size-7);
+    gap: var(--space-s);
+    justify-content: space-between;
+    margin-bottom: var(--space-s);
+  }
+
+  .token-row__head code {
+    color: var(--color-neutral-800);
+  }
+
+  .token-row__body {
+    align-items: end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+  }
+
+  .token-row__bar {
+    background: var(--color-neutral-100);
+    border-radius: var(--border-radius-rounded);
+    flex: 1 1 8rem;
+    height: 0.5rem;
+    margin-bottom: var(--input-padding-y);
+    min-width: 6rem;
+    overflow: hidden;
+  }
+
+  .token-row__fill {
+    background: var(--color-accent);
+    border-radius: inherit;
+    display: block;
+    height: 100%;
+    transition: width 0.15s ease;
+    width: 0%;
+  }
+
+  .token-row__radius-preview {
+    background: var(--color-accent);
+    flex: 0 0 auto;
+    height: 3rem;
+    width: 3rem;
+    margin-left: auto;
+  }
+
+  .token-row .swatch {
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+
+  .button.figma-del {
+    --button-padding-block: 0 !important;
+    --button-padding-inline: 0 !important;
+    font-size: var(--font-size-5);
+    width: 3rem;
+    height: 3rem;
+    border: 0 !important;
+    position: relative;
+    line-height: 1 !important;
+
+    span {
+      position: absolute;
+      top: 48%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  /* Preview panel */
+  figma-preview {
+    width: 100%;
+  }
+
+  .figma-preview {
+    background: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--border-radius);
+    color: var(--color-neutral-900);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    padding: var(--space-xl) var(--space-xl);
+  }
+
+  .figma-preview__row {
+    align-items: center;
+    display: grid;
+    gap: var(--space-m);
+    grid-template-columns: 8rem 1fr;
+  }
+
+  .figma-preview__label {
+    color: var(--color-neutral-600);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-8);
+  }
+
+  .figma-preview__neutrals {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+  }
+
+  .figma-preview__chip {
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--border-radius-s);
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .figma-preview__bars {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  .figma-preview__spacebar {
+    background: var(--color-accent);
+    border-radius: var(--border-radius-s);
+    display: block;
+    height: 0.5rem;
+  }
+
+  .figma-preview__shapes {
+    align-items: center;
+    display: flex;
+    gap: var(--space-s);
+  }
+
+  .figma-preview__shape {
+    background: var(--color-accent);
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .figma-preview__shape--wide {
+    height: 2rem;
+    width: 6rem;
+  }
+
+  .figma-preview__grid-frame {
+    background: var(--color-neutral-100);
+    border-radius: var(--border-radius-s);
+    height: 0.75rem;
+    position: relative;
+    width: 100%;
+  }
+
+  .figma-preview__grid-bar {
+    background: var(--color-accent);
+    border-radius: inherit;
+    height: 100%;
+    margin: 0 auto;
+    max-width: var(--grid-width);
+  }
+
+  figma-export {
+    width: 100%;
+  }
+
+  .figma-codeblock {
+    background: var(--color-neutral-100);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--border-radius);
+    color: var(--color-neutral-900);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-8);
+    line-height: 1.5;
+    max-height: 48rem;
+    overflow: auto;
+    width: 100%;
+    padding: var(--space-m);
   }
 
 }

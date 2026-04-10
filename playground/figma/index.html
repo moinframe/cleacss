@@ -1,0 +1,131 @@
+{{#> layoutDefault showHeader=true title="Figma export | cleacss"}}
+
+<section class="span-content flow has-pt-xl">
+  <h1 class="has-size-3">Figma Variables</h1>
+  <p class="text">
+    Tweak the cleacss tokens visually, copy them as CSS, or download a Figma Variables JSON file ready to import as
+    a Variable Collection with <strong>Light</strong> and <strong>Dark</strong> modes.
+  </p>
+
+  <nav class="flow-row has-gap-s has-flex-wrap has-mt-s figma-tabs">
+    <a href="#space">Space</a>
+    <a href="#color">Color</a>
+    <a href="#grid">Grid</a>
+    <a href="#radius">Border radius</a>
+    <a href="#preview">Preview</a>
+    <a href="#export">Export</a>
+  </nav>
+</section>
+
+<!-- ────────── SPACE ────────── -->
+<section id="space" class="span-content flow has-mt-2xl">
+  <h2 class="has-size-4">Space</h2>
+  <p class="text has-color-neutral-700">
+    Each space token is a fluid <code>clamp()</code>. Set the minimum and maximum px values — interpolation is
+    rebuilt automatically between 360px and 1440px viewports.
+  </p>
+
+  <figma-space-editor class="flow has-gap-s has-mt-m"></figma-space-editor>
+</section>
+
+<!-- ────────── COLOR ────────── -->
+<section id="color" class="span-content flow has-mt-2xl">
+  <h2 class="has-size-4">Color</h2>
+  <p class="text has-color-neutral-700">
+    The neutral scale is generated from a single hue + chroma.
+  </p>
+
+  <h3 class="has-size-6 has-mt-m">Neutrals</h3>
+  <figma-neutral-editor></figma-neutral-editor>
+
+  <figma-accent-editor class="has-mt-l"></figma-accent-editor>
+</section>
+
+<!-- ────────── GRID ────────── -->
+<section id="grid" class="span-content flow has-mt-2xl">
+  <h2 class="has-size-4">Grid</h2>
+  <p class="text has-color-neutral-700">
+    Maximum content width per breakpoint, in pixels.
+  </p>
+  <figma-grid-editor class="flow has-gap-s has-mt-m"></figma-grid-editor>
+</section>
+
+<!-- ────────── BORDER RADIUS ────────── -->
+<section id="radius" class="span-content flow has-mt-2xl">
+  <h2 class="has-size-4">Border radius</h2>
+  <figma-radius-editor class="flow has-gap-s has-mt-m"></figma-radius-editor>
+</section>
+
+<!-- ────────── PREVIEW ────────── -->
+<section id="preview" class="span-content flow has-mt-2xl">
+  <figma-preview>
+    <div class="flow has-mb-l">
+
+      <div class="flow-row has-items-center">
+        <h2 class="has-size-4">Preview</h2>
+        <button data-preview-toggle type="button" class="button button--outline has-ml-a has-size-8" data-mode="light">
+          <span>Switch to dark</span>
+        </button>
+      </div>
+    </div>
+    <div data-preview-box class="figma-preview" data-mode="light" style="color-scheme: light">
+      <div class="figma-preview__row">
+        <div class="figma-preview__label">Neutral scale</div>
+        <div class="figma-preview__neutrals">
+          <span class="figma-preview__chip" style="background:var(--color-neutral-0)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-50)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-100)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-200)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-300)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-400)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-500)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-600)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-700)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-800)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-900)"></span>
+          <span class="figma-preview__chip" style="background:var(--color-neutral-1000)"></span>
+        </div>
+      </div>
+
+      <div class="figma-preview__row">
+        <div class="figma-preview__label">Accents</div>
+        <div data-preview-accents class="figma-preview__neutrals"></div>
+      </div>
+
+      <div class="figma-preview__row">
+        <div class="figma-preview__label">Border radius</div>
+        <div class="figma-preview__shapes">
+          <span class="figma-preview__shape" style="border-radius:var(--border-radius-s)"></span>
+          <span class="figma-preview__shape" style="border-radius:var(--border-radius)"></span>
+          <span class="figma-preview__shape figma-preview__shape--wide"
+            style="border-radius:var(--border-radius-rounded)"></span>
+        </div>
+      </div>
+
+      <div class="figma-preview__row">
+        <div class="figma-preview__label">Button</div>
+        <div class="flow-row has-gap-xs">
+          <button type="button" class="button">Button</button>
+          <button type="button" class="button button--outline">Button</button>
+        </div>
+      </div>
+    </div>
+  </figma-preview>
+</section>
+
+<!-- ────────── EXPORT ────────── -->
+<section id="export" class="span-content flow has-mt-2xl has-mb-2xl">
+  <figma-export>
+    <div class="flow-row has-justify-between has-items-center has-gap-xs">
+      <h2 class="has-size-4">Export</h2>
+      <button data-copy-css type="button" class="button button--outline has-size-8 has-ml-a">Copy CSS</button>
+      <button data-download-json type="button" class="button button--outline has-size-8">Download JSON</button>
+    </div>
+
+    <pre class="figma-codeblock has-mt-l"><code data-css-output></code></pre>
+  </figma-export>
+</section>
+
+<script type="module" src="/@src/figma.ts"></script>
+
+{{/layoutDefault }}

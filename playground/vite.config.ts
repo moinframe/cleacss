@@ -16,6 +16,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         overview: resolve(__dirname, 'overview/index.html'),
         colors: resolve(__dirname, 'colors/index.html'),
+        figma: resolve(__dirname, 'figma/index.html'),
       },
     },
   },
