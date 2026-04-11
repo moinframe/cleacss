@@ -12,6 +12,7 @@
 @use "./utilities/space" as utilitiesSpace;
 @use "./utilities/visibility" as utilitiesVisibility;
 @use "./utilities/color" as utilitiesColor;
+@use "./utilities/color-scheme" as utilitiesColorScheme;
 
 @use "./elements/button" as elementsButton;
 @use "./elements/title" as elementsTitle;

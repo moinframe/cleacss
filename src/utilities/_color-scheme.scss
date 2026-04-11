@@ -1,0 +1,17 @@
+@use "../variables/colors" as colors;
+
+@layer is {
+  .is-dark {
+    @include colors.color-scheme-neutrals;
+    background-color: var(--color-base-background);
+    color: var(--color-base);
+    color-scheme: dark;
+  }
+
+  .is-light {
+    @include colors.color-scheme-neutrals;
+    background-color: var(--color-base-background);
+    color: var(--color-base);
+    color-scheme: light;
+  }
+}

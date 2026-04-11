@@ -172,13 +172,6 @@
 @custom-media --2xl-max (max-width: 120rem);
 :root,
 :host {
-  --color-base: var(--color-neutral-900);
-  --color-base-background: var(--color-neutral-50);
-  --color-accent: oklch(0.65 0.4 280);
-  --color-white: #fff;
-  --color-black: #000;
-  --color-neutral-h: 300;
-  --color-neutral-c: 0.01;
   --color-neutral-0: light-dark(oklch(1 var(--color-neutral-c) var(--color-neutral-h)), oklch(0 var(--color-neutral-c) var(--color-neutral-h)));
   --color-neutral-50: light-dark(oklch(0.95 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.1 var(--color-neutral-c) var(--color-neutral-h)));
   --color-neutral-100: light-dark(oklch(0.9 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.15 var(--color-neutral-c) var(--color-neutral-h)));
@@ -191,6 +184,13 @@
   --color-neutral-800: light-dark(oklch(0.2 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.8 var(--color-neutral-c) var(--color-neutral-h)));
   --color-neutral-900: light-dark(oklch(0.1 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.85 var(--color-neutral-c) var(--color-neutral-h)));
   --color-neutral-1000: light-dark(oklch(0 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.95 var(--color-neutral-c) var(--color-neutral-h)));
+  --color-base: var(--color-neutral-900);
+  --color-base-background: var(--color-neutral-50);
+  --color-accent: oklch(0.65 0.4 280);
+  --color-white: #fff;
+  --color-black: #000;
+  --color-neutral-h: 300;
+  --color-neutral-c: 0.01;
   --color-success: oklch(0.65 0.15 150);
   --color-warning: oklch(0.75 0.15 80);
   --color-error: oklch(0.65 0.18 25);
@@ -3886,6 +3886,46 @@
   }
   .has-background-info {
     background-color: var(--color-info);
+  }
+}
+@layer is {
+  .is-dark {
+    --color-neutral-0: light-dark(oklch(1 var(--color-neutral-c) var(--color-neutral-h)), oklch(0 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-50: light-dark(oklch(0.95 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.1 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-100: light-dark(oklch(0.9 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.15 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-200: light-dark(oklch(0.8 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.2 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-300: light-dark(oklch(0.7 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.3 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-400: light-dark(oklch(0.6 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.4 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-500: oklch(0.5 var(--color-neutral-c) var(--color-neutral-h));
+    --color-neutral-600: light-dark(oklch(0.4 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.6 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-700: light-dark(oklch(0.3 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.7 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-800: light-dark(oklch(0.2 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.8 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-900: light-dark(oklch(0.1 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.85 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-1000: light-dark(oklch(0 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.95 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-base: var(--color-neutral-900);
+    --color-base-background: var(--color-neutral-50);
+    background-color: var(--color-base-background);
+    color: var(--color-base);
+    color-scheme: dark;
+  }
+  .is-light {
+    --color-neutral-0: light-dark(oklch(1 var(--color-neutral-c) var(--color-neutral-h)), oklch(0 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-50: light-dark(oklch(0.95 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.1 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-100: light-dark(oklch(0.9 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.15 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-200: light-dark(oklch(0.8 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.2 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-300: light-dark(oklch(0.7 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.3 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-400: light-dark(oklch(0.6 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.4 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-500: oklch(0.5 var(--color-neutral-c) var(--color-neutral-h));
+    --color-neutral-600: light-dark(oklch(0.4 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.6 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-700: light-dark(oklch(0.3 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.7 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-800: light-dark(oklch(0.2 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.8 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-900: light-dark(oklch(0.1 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.85 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-neutral-1000: light-dark(oklch(0 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.95 var(--color-neutral-c) var(--color-neutral-h)));
+    --color-base: var(--color-neutral-900);
+    --color-base-background: var(--color-neutral-50);
+    background-color: var(--color-base-background);
+    color: var(--color-base);
+    color-scheme: light;
   }
 }
 @layer elements {
