@@ -1,14 +1,16 @@
 @use "../variables/colors" as colors;
 
 @layer is {
-  .is-dark {
+  .is-dark,
+  [data-theme="dark"] {
     @include colors.color-scheme-neutrals;
     background-color: var(--color-base-background);
     color: var(--color-base);
     color-scheme: dark;
   }
 
-  .is-light {
+  .is-light,
+  [data-theme="light"] {
     @include colors.color-scheme-neutrals;
     background-color: var(--color-base-background);
     color: var(--color-base);

@@ -3889,7 +3889,8 @@
   }
 }
 @layer is {
-  .is-dark {
+  .is-dark,
+  [data-theme=dark] {
     --color-neutral-0: light-dark(oklch(1 var(--color-neutral-c) var(--color-neutral-h)), oklch(0 var(--color-neutral-c) var(--color-neutral-h)));
     --color-neutral-50: light-dark(oklch(0.95 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.1 var(--color-neutral-c) var(--color-neutral-h)));
     --color-neutral-100: light-dark(oklch(0.9 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.15 var(--color-neutral-c) var(--color-neutral-h)));
@@ -3908,7 +3909,8 @@
     color: var(--color-base);
     color-scheme: dark;
   }
-  .is-light {
+  .is-light,
+  [data-theme=light] {
     --color-neutral-0: light-dark(oklch(1 var(--color-neutral-c) var(--color-neutral-h)), oklch(0 var(--color-neutral-c) var(--color-neutral-h)));
     --color-neutral-50: light-dark(oklch(0.95 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.1 var(--color-neutral-c) var(--color-neutral-h)));
     --color-neutral-100: light-dark(oklch(0.9 var(--color-neutral-c) var(--color-neutral-h)), oklch(0.15 var(--color-neutral-c) var(--color-neutral-h)));

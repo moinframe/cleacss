@@ -16,7 +16,19 @@ Force a section into dark or light mode, regardless of the user's system prefere
 </section>
 ```
 
-The `.is-dark` and `.is-light` classes set `color-scheme` on the element and re-declare all neutral color variables so that `light-dark()` resolves locally. Background and text colors are applied automatically.
+Alternatively, you can use `data-theme` attributes:
+
+```html
+<section data-theme="dark">
+  <p>This section is always in dark mode.</p>
+</section>
+
+<section data-theme="light">
+  <p>This section is always in light mode.</p>
+</section>
+```
+
+Both approaches set `color-scheme` on the element and re-declare all neutral color variables so that `light-dark()` resolves locally. Background and text colors are applied automatically.
 
 ## Customization
 
