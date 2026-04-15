@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/moinframe/cleacss/compare/v3.1.0...v3.2.0) (2026-04-15)
+
+### Features
+
+* add [data-theme] style ([8868992](https://github.com/moinframe/cleacss/commit/88689928c9242eae60e87befa371fc4efada4a33))
+* add is-dark and is-light classes ([68439f4](https://github.com/moinframe/cleacss/commit/68439f4cd55039c93485aa253a438fe1086211c8))
+
 ## [3.1.0](https://github.com/moinframe/cleacss/compare/v3.1.0-beta.3...v3.1.0) (2026-02-17)
 
 ## [3.1.0-beta.3](https://github.com/moinframe/cleacss/compare/v3.1.0-beta.2...v3.1.0-beta.3) (2026-02-17)
