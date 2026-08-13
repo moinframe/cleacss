@@ -58,6 +58,22 @@ You can attach the name of the breakpoint prefixed by a `:` to a `span-x` class 
 </div>
 ```
 
+All breakpoints are min-width based, so several of them match at once on a wide screen. When they do, **the last matching breakpoint wins**, regardless of how many columns it spans. Spans may therefore grow *or* shrink as the viewport gets wider — `span-4:s span-8:m` and `span-8:s span-4:m` both do what they read like.
+
+An un-suffixed class such as `span-full` or `span-6` acts as the base value and is overridden by every breakpoint that matches. This is what makes a card grid that gets denser on larger screens: one card per row by default, two from `s`, three from `m`.
+
+```html
+<div class="grid">
+  <div class="subgrid span-content">
+    <div class="span-full span-6:s span-4:m">Card</div>
+    <div class="span-full span-6:s span-4:m">Card</div>
+    <div class="span-full span-6:s span-4:m">Card</div>
+  </div>
+</div>
+```
+
+The same rules apply to `span-full:x`, `span-content:x` and the `start-x` classes.
+
 ## Column start
 
 You can use the `start-x` classes to set the start column of an element. The `x` is the number of the column. It's also possible to use the responsive breakpoints. It follows the same pattern, e.g. `start-2:l` will start the element at column 2 on large screens.

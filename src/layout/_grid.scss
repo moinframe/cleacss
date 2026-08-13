@@ -27,102 +27,80 @@ $numberOfColumns: 14;
   .span-full {
     grid-column-end: -1;
     grid-column-start: 1;
-
-    @each $name, $value in bp.$breakpoints {
-      @media (--#{$name}) {
-        .span-full\:#{$name} {
-          grid-column-end: -1;
-          grid-column-start: 1;
-        }
-      }
-    }
   }
 
   // Content width
   .span-content {
     grid-column-end: -2;
     grid-column-start: 2;
-
-    @each $name, $value in bp.$breakpoints {
-      @media (--#{$name}) {
-        .span-content\:#{$name} {
-          grid-column-end: -2;
-          grid-column-start: 2;
-        }
-      }
-    }
   }
 
   // Generate .span-x classes
   @for $i from 1 through $numberOfColumns {
-    $num: $i;
-
-    .span-#{$num} {
-      grid-column-end: span $num;
+    .span-#{$i} {
+      grid-column-end: span $i;
       grid-column-start: auto;
-    }
-  }
-
-  @for $i from 1 through $numberOfColumns {
-    $num: $i;
-
-    @each $name, $value in bp.$breakpoints {
-      @media (--#{$name}) {
-        .span-#{$num}\:#{$name} {
-          grid-column-end: span $num;
-          grid-column-start: auto;
-        }
-      }
     }
   }
 
   // Generate .start-x classes
   @for $i from 0 through ($numberOfColumns - 1) {
-    $num: $i;
-
-    .start-#{$num} {
-      grid-column-start: $num + 1;
+    .start-#{$i} {
+      grid-column-start: $i + 1;
     }
 
-    .subgrid .start-#{$num},
-    .grid .grid .start-#{$num} {
-      grid-column-start: $num;
-    }
-  }
-
-  @for $i from 0 through ($numberOfColumns - 1) {
-    $num: $i;
-
-    @each $name, $value in bp.$breakpoints {
-      @media (--#{$name}) {
-        .start-#{$num}\:#{$name} {
-          grid-column-start: $num + 1;
-        }
-
-        .subgrid .start-#{$num}\:#{$name},
-        .grid .grid .start-#{$num}\:#{$name} {
-          grid-column-start: $num;
-        }
-      }
+    .subgrid .start-#{$i},
+    .grid .grid .start-#{$i} {
+      grid-column-start: $i;
     }
   }
 
   // Generate .start-x classes to be used in .col-content
   @for $i from 1 through ($numberOfColumns - 2) {
-    $num: $i;
-
-    .span-content .start-#{$num} {
-      grid-column-start: $num;
+    .span-content .start-#{$i} {
+      grid-column-start: $i;
     }
   }
 
-  @for $i from 1 through ($numberOfColumns - 2) {
-    $num: $i;
+  // Responsive variants
+  // The breakpoint loop has to stay on the outside so that all variants of one
+  // breakpoint are emitted together, in breakpoint order. Every variant is a
+  // single class inside the same layer, so source order alone decides which one
+  // wins when several match — this way the last matching breakpoint does,
+  // whatever column count it carries.
+  @each $name, $value in bp.$breakpoints {
+    @media (--#{$name}) {
+      .span-full\:#{$name} {
+        grid-column-end: -1;
+        grid-column-start: 1;
+      }
 
-    @each $name, $value in bp.$breakpoints {
-      @media (--#{$name}) {
-        .span-content .start-#{$num}\:#{$name} {
-          grid-column-start: $num;
+      .span-content\:#{$name} {
+        grid-column-end: -2;
+        grid-column-start: 2;
+      }
+
+      @for $i from 1 through $numberOfColumns {
+        .span-#{$i}\:#{$name} {
+          grid-column-end: span $i;
+          grid-column-start: auto;
+        }
+      }
+
+      @for $i from 0 through ($numberOfColumns - 1) {
+        .start-#{$i}\:#{$name} {
+          grid-column-start: $i + 1;
+        }
+
+        .subgrid .start-#{$i}\:#{$name},
+        .grid .grid .start-#{$i}\:#{$name} {
+          grid-column-start: $i;
+        }
+      }
+
+      @for $i from 1 through ($numberOfColumns - 2) {
+        .span-content .start-#{$i}\:#{$name} {
+          grid-column-start: $i;
         }
       }
     }
