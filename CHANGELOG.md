@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.3.0](https://github.com/moinframe/cleacss/compare/v3.2.1...v3.3.0) (2026-08-13)
+
+### Features
+
+* update dependencies ([ebe34f7](https://github.com/moinframe/cleacss/commit/ebe34f7a080c3eeeeca8c0748c9ce96158ac62ff))
+
 ## [3.2.1](https://github.com/moinframe/cleacss/compare/v3.2.0...v3.2.1) (2026-08-13)
 
 ### Bug Fixes
