@@ -42,21 +42,15 @@
     "playground:build": "pnpm --filter cleacss-playground build; pnpm --filter cleacss-playground build:lib"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^10.0.6",
-    "concurrently": "^9.2.1",
-    "lightningcss-cli": "^1.32.0",
-    "release-it": "^19.2.4",
+    "@release-it/conventional-changelog": "^12.0.0",
+    "concurrently": "^10.0.4",
+    "lightningcss-cli": "^1.33.0",
+    "release-it": "^21.0.2",
     "rimraf": "^6.1.3",
-    "sass": "^1.99.0",
-    "stylelint": "^17.7.0",
+    "sass": "^1.102.0",
+    "stylelint": "^17.14.1",
     "stylelint-config-recommended-scss": "^17.0.1",
-    "stylelint-order": "^7.0.1"
+    "stylelint-order": "^8.1.1"
   },
-  "packageManager": "pnpm@10.29.3",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "lightningcss-cli"
-    ]
-  }
+  "packageManager": "pnpm@11.21.0"
 }
