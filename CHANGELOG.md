@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.2.1](https://github.com/moinframe/cleacss/compare/v3.2.0...v3.2.1) (2026-08-13)
+
+### Bug Fixes
+
+* responsive span/start utilities in breakpoint order ([f07ab2e](https://github.com/moinframe/cleacss/commit/f07ab2e08f2304a6de704de2fffd1ac182ea506b))
+
 ## [3.2.0](https://github.com/moinframe/cleacss/compare/v3.1.0...v3.2.0) (2026-04-15)
 
 ### Features
